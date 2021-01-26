@@ -15,7 +15,7 @@ $opts = array('http' =>
         "Telephone": "'.$_POST['phoneInput'].'",
         "Adresse": "'.$_POST['addressInput'].'",
         "CP": "'.$_POST['cpInput'].'",
-        "Ville": "'.$_POST['villeInput'].'",
+        "Ville": "'.$_POST['villeInput'].'"
          },
    "table_name": "Eleve",
    "row_id": "'.$_POST['row_id'].'"
