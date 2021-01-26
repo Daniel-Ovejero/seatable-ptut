@@ -55,16 +55,16 @@
                 <input type="text" class="form-control" id="cpInput" name="cpInput" value="<?= isset($object->CodePostal) ? $object->CodePostal : "" ?>" disabled>
             </div>
 
-        </form>
+            <div class="row text-right mt-5">
+                <div class="col align-self-end">
 
-        <div class="row text-right mt-5">
-            <div class="col align-self-end">
+                    <button id="btnUpdInfo" class="btn btn-outline-info" type="button"><i class="fas fa-user-edit"></i> Modifier</button>
 
-                <button id="btnUpdInfo" class="btn btn-outline-info"><i class="fas fa-user-edit"></i> Modifier</button>
-
-                <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none"><i class="far fa-save"></i> Enregistrer</button>
+                    <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit"><i class="far fa-save"></i> Enregistrer</button>
+                </div>
             </div>
-        </div>
+
+        </form>
 
     </div>
 
