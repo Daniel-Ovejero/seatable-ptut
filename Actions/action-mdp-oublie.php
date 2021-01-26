@@ -25,7 +25,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
 
 		{
 
-			"column_name": "Name",
+			"column_name": "AdresseMail",
 
 			"filter_predicate": "is",
 
@@ -43,7 +43,9 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
     $result = file_get_contents($url, false, $context);
     $result = json_decode($result);
 
-    if (sizeof($result->rows) < 1) {
+
+
+    if (sizeof($result->rows) > 0) {
 
         $mail = new PHPmailer();
 
@@ -72,14 +74,15 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
 
         $opts = array('http' =>
             array(
-                'method' => 'POST',
+                'method' => 'PUT',
                 'header' => "Content-Type: application/json\r\n" .
                     "Authorization: Token " . TOKEN . "\r\n",
                 'content' => '{
-   "row": {"Name": "' . $_POST['recup_mail'] . '",
+   "row": {
    "Code": "' . password_hash($random_number, PASSWORD_DEFAULT) . '"
    },
-   "table_name": "Eleve"
+   "table_name": "Eleve",
+   "row_id": "'.$result->rows[0]->_id.'"
     }'
             )
         );
@@ -114,7 +117,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
 
 		{
 
-			"column_name": "Name",
+			"column_name": "AdresseMail",
 
 			"filter_predicate": "is",
 
@@ -168,7 +171,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
 
 		{
 
-			"column_name": "Name",
+			"column_name": "AdresseMail",
 
 			"filter_predicate": "is",
 
@@ -198,9 +201,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
                     'content' => '{
    "row": {   
      
-   "MotDePasse": "' . password_hash($_POST['change_mdp'], PASSWORD_DEFAULT) . '",
-   "Active": "1",
-   "Code": "0"
+   "MotDePasse": "' . password_hash($_POST['change_mdp'], PASSWORD_DEFAULT) . '"
 
    },
    "table_name": "Eleve",
