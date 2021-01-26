@@ -14,7 +14,7 @@ session_destroy();
 
 <body>
 <div class="container text-center">
-    <form class="connexionForm" method="post" action="../Actions/action_connexion_etu.php">
+    <form class="connexionForm" method="post" action="../Actions/action-connexion-etu.php">
         <div>
             <label for="username">Email</label>
         </div>
