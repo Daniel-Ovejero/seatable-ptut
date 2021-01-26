@@ -1,0 +1,29 @@
+.connexionForm{
+    margin-top: 20%;
+}
+
+@media all and (min-width: 800px)
+{
+    .main-input{
+        display: inline-block;
+        width: 600px;
+    }
+
+    .btn-primary{
+        width: 200px;
+        height: 40px;
+    }
+}
+
+@media all  and (max-width: 800px)
+{
+    .main-input{
+        display: inline-block;
+        width: 300px;
+    }
+
+    .btn-primary{
+        width: 200px;
+        height: 40px;
+    }
+}
