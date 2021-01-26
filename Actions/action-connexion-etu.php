@@ -47,8 +47,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     }
 
     if(isset($_SESSION["row_id"])) {
-        echo "OUI";
-        //header("Location: ./detail.php");
+        //echo "OUI";
+        header("Location: ../Templates/detail.php");
     }else{
         echo "Couple login/mdp faux";
     }
