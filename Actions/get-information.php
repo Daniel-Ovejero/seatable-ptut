@@ -1,8 +1,9 @@
 <?php
 require_once '../Includes/conf.php';
 session_start();
-$_SESSION["row_id"] = '20210126-00007';
-//if (!isset($_SESSION['Name'])) { header('Location: index.php'); }
+
+if (!isset($_SESSION['row_id'])) { header('Location: index.php'); }
+
 $opts = [
     'http' => [
         'method' => 'GET',
