@@ -47,7 +47,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     }
 
     if(isset($_SESSION["row_id"])) {
-        header("Location: ./detail.php");
+        header("Location: ../Templates/detail.php");
     }else{
         echo "Couple login/mdp faux";
     }

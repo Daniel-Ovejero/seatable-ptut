@@ -16,42 +16,43 @@
         <hr>
 
         <form id="formInfo" action="action_update.php" method="post" enctype="multipart/form-data">
+
             <input type="hidden" id="row_id" name="row_id" value="<?= $object->_id ?>">
 
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nameInput">Nom</label>
-                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= $object->Nom ?>" disabled>
+                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= isset($object->Nom) ? $object->Nom : "" ?>" disabled>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nameInput">Prénom</label>
-                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= $object->Prenom ?>" disabled>
+                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= isset($object->Prenom) ? $object->Prenom : "" ?>" disabled>
                     </div>
                 </div>
             </div>
 
             <div class="form-group mt-3">
                 <label for="mailInput">Adresse mail</label>
-                <input type="email" class="form-control" id="mailInput" name="mailInput" value="<?= $object->AdresseMail ?>" disabled>
+                <input type="email" class="form-control" id="mailInput" name="mailInput" value="<?= isset($object->AdresseMail) ? $object->AdresseMail : "" ?>" disabled>
             </div>
             <div class="form-group">
                 <label for="phoneInput">Téléphone</label>
-                <input type="text" class="form-control" id="phoneInput" name="phoneInput" value="<?= $object->Telephone ?>" disabled>
+                <input type="text" class="form-control" id="phoneInput" name="phoneInput" value="<?= isset($object->Telephone) ? $object->Telephone : "" ?>" disabled>
             </div>
             <div class="form-group">
                 <label for="addressInput">Adresse</label>
-                <input type="text" class="form-control" id="addressInput" name="addressInput" value="<?= $object->Adresse ?>" disabled>
+                <input type="text" class="form-control" id="addressInput" name="addressInput" value="<?= isset($object->Adresse) ? $object->Adresse : "" ?>" disabled>
             </div>
             <div class="form-group">
                 <label for="townInput">Ville</label>
-                <input type="text" class="form-control" id="townInput" name="townInput" value="<?= $object->Ville ?>" disabled>
+                <input type="text" class="form-control" id="townInput" name="townInput" value="<?= isset($object->Ville) ? $object->Ville : "" ?>" disabled>
             </div>
             <div class="form-group">
                 <label for="cpInput">Code Postal</label>
-                <input type="text" class="form-control" id="cpInput" name="cpInput" value="<?= $object->CodePostal ?>" disabled>
+                <input type="text" class="form-control" id="cpInput" name="cpInput" value="<?= isset($object->CodePostal) ? $object->CodePostal : "" ?>" disabled>
             </div>
 
         </form>
