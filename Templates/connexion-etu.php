@@ -29,7 +29,7 @@ session_destroy();
         </div>
         <div class="mt-xl-5">
             <button class="btn btn-primary" type="submit">Connexion</button>
-            <a class="btn btn-secondary" style="width: 150px; height: 40px" href="mdp-oublie.php">Mot de passe oublié</a>
+            <a class="btn btn-secondary" style="width: 200px; height: 40px" href="mdp-oublie.php">Mot de passe oublié</a>
         </div>
     </form>
 </div>
