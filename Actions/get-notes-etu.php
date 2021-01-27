@@ -102,7 +102,7 @@ $opts = [
             "filters":[                                                 
 		        {
                     "column_name": "Eleve",
-                    "filter_predicate": "is",
+                    "filter_predicate": "contains",
                     "filter_term": "'.$_SESSION["row_id"].'",
                     "filter_term_modifier": ""	
 		        }
