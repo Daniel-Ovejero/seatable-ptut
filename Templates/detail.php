@@ -8,6 +8,7 @@
 <body>
 
     <?php include '../Actions/get-information.php'?>
+    <?php include '../Includes/navbar.php'?>
 
     <div class="container">
         <h1><> Menu <></h1>

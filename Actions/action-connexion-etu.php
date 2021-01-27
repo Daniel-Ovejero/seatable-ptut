@@ -40,6 +40,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             if ($_POST["username"] == $etudiant["AdresseMail"]) {
                 if (password_verify($_POST["password"],$etudiant["MotDePasse"])) {
                     $_SESSION["row_id"] = $etudiant["Id"];
+                    $_SESSION["statut"] = "Eleve";
                     break;
                 }
             }

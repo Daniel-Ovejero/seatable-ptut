@@ -40,6 +40,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             if ($_POST["username"] == $prof["Name"]) {
                 if (password_verify($_POST["password"], $prof["MotDePasse"])) {
                     $_SESSION["row_id"] = $prof["Id"];
+                    $_SESSION["statut"] = "Professeur";
                     break;
                 }
             }
