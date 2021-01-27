@@ -1,4 +1,4 @@
-<?php include '../Actions/get-notes-etu.php';
+<?php include '../../Actions/get-notes-etu.php';
 
 
 foreach ($matieres as $matiere){
