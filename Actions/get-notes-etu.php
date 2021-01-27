@@ -13,7 +13,7 @@ $opts = [
             "filters":[                                                 
 		        {
                     "column_name": "Eleve",
-                    "filter_predicate": "is",
+                    "filter_predicate": "contains",
                     "filter_term": "'.$_SESSION["row_id"].'",
                     "filter_term_modifier": ""	
 		        }
@@ -27,10 +27,10 @@ $context  = stream_context_create($opts);
 $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=Classe";
 $result = file_get_contents($url, false, $context);
 $rep = json_decode($result);
-
 $object = $rep->rows[0];
 
-$idClasse = $object->_id;
+$idClasse = $object->LibelleClasse++;
+
 
 $opts = [
     'http' => [
@@ -41,7 +41,7 @@ $opts = [
             "filters":[                                                 
 		        {
                     "column_name": "Classe",
-                    "filter_predicate": "is",
+                    "filter_predicate": "contains",
                     "filter_term": "'.$idClasse.'",
                     "filter_term_modifier": ""	
 		        }
@@ -56,6 +56,8 @@ $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtere
 $result = file_get_contents($url, false, $context);
 $rep = json_decode($result);
 
+
+$matieres = [];
 foreach ($rep->rows as $matiere){
     $matieres[] = $matiere;
 }
@@ -70,7 +72,7 @@ $opts = [
             "filters":[                                                 
 		        {
                     "column_name": "Classe",
-                    "filter_predicate": "is",
+                    "filter_predicate": "contains",
                     "filter_term": "'.$idClasse.'",
                     "filter_term_modifier": ""	
 		        }
@@ -85,6 +87,7 @@ $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtere
 $result = file_get_contents($url, false, $context);
 $rep = json_decode($result);
 
+$partiels = [];
 foreach ($rep->rows as $partiel){
     $partiels [] = $partiel;
 }
