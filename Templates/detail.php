@@ -11,9 +11,7 @@
     <?php include '../Includes/navbar.php'?>
 
     <div class="container">
-        <h1><> Menu <></h1>
-        <hr>
-        <h2>Mes informations</h2>
+        <h2 class="mt-5">Mes informations</h2>
         <hr>
 
         <form id="formInfo" action="../Actions/action-update.php" method="post" enctype="multipart/form-data">
