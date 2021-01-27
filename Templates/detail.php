@@ -15,7 +15,7 @@
         <h2>Mes informations</h2>
         <hr>
 
-        <form id="formInfo" action="action_update.php" method="post" enctype="multipart/form-data">
+        <form id="formInfo" action="../Actions/action-update.php" method="post" enctype="multipart/form-data">
 
             <input type="hidden" id="row_id" name="row_id" value="<?= $object->_id ?>">
 
