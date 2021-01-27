@@ -98,7 +98,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
         $mail->send();
         $_SESSION["Mail"] = $_POST["recup_mail"];
 
-        header('Location: ../Templates/mdp-oublie.php?section=code');
+        header('Location: ../Templates/mdp-oublie-prof.php?section=code');
     } else {
         $error["doublon"] = true;
     }
@@ -154,7 +154,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
         $context = stream_context_create($opts);
         $url = "https://cloud.seatable.io/dtable-server/api/v1/dtables/" . UUID . "/rows/";
         $result = file_get_contents($url, false, $context);
-        header("Location: ../Templates/mdp-oublie.php?section=changemdp");
+        header("Location: ../Templates/mdp-oublie-prof.php?section=changemdp");
     } else {
         $error["code"] = true;
     }
