@@ -29,7 +29,7 @@ $result = file_get_contents($url, false, $context);
 $rep = json_decode($result);
 $object = $rep->rows[0];
 
-$idClasse = $object->LibelleClasse++;
+$idClasse = $object->LibelleClasse;
 
 
 $opts = [
