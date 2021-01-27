@@ -15,7 +15,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             'content' =>  '{
         "filters":[
 		{
-			"column_name": "Adresse Mail",
+			"column_name": "AdresseMail",
 
 			"filter_predicate": "is",
 
