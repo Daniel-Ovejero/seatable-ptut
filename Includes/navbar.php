@@ -38,6 +38,9 @@ foreach ($result->columns as $res){
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
+                        <a title="Mes Informations" class="nav-link" href="../Templates/detail.php"><i style="font-size: 20px" class="fas fa-id-card"></i></a>
+                    </li>
+                    <li class="nav-item">
                         <a title="Déconnexion" class="nav-link" href="../Actions/logout.php"><i style="font-size: 20px" class="fas fa-sign-out-alt"></i> Déconnexion</a>
                     </li>
                 </ul>
