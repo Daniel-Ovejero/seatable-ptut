@@ -27,8 +27,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="nameInput">Prénom</label>
-                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= isset($object["Prenom"]) ? $object["Prenom"] : "" ?>" disabled>
+                        <label for="firstnameInput">Prénom</label>
+                        <input type="text" class="form-control" id="firstnameInput" name="firstnameInput" value="<?= isset($object["Prenom"]) ? $object["Prenom"] : "" ?>" disabled>
                     </div>
                 </div>
             </div>
@@ -38,8 +38,8 @@
             foreach ($fields as $field) {
             ?>
                 <div class="form-group">
-                    <label for="phoneInput"><?= $field->name ?></label>
-                    <input type="text" class="form-control" id="phoneInput" name="phoneInput" value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
+                    <label for="<?= $field->name ?>Input"><?= $field->name ?></label>
+                    <input type="text" class="form-control" id="<?= $field->name ?>Input" name="<?= $field->name ?>" value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
                 </div>
             <?php
             }
