@@ -1,5 +1,5 @@
 <?php
-require_once '../../Includes/conf.php';
+require_once '../Includes/conf.php';
 session_start();
 
 if (!isset($_SESSION['row_id'])) { header('Location: index.php'); }
