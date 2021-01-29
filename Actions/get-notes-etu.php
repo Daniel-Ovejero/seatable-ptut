@@ -93,6 +93,7 @@ foreach ($rep->rows as $partiel){
 }
 
 
+
 $opts = [
     'http' => [
         'method' => 'GET',
