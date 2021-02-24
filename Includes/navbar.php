@@ -29,7 +29,7 @@ foreach ($result->columns as $res){
     if($res->type == 'link'){
 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Templates/<?= $_SESSION['statut'] ?>/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
+                        <a class="nav-link" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
                     </li>
 <?php
     }
