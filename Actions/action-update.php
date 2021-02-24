@@ -20,7 +20,7 @@ $opts = array('http' =>
    "row": {
             '.$row.'
          },
-   "table_name": "Eleve",
+   "table_name": "'.$_SESSION['statut'].'",
    "row_id": "'.$_POST['row_id'].'"
 }'
     )
