@@ -1,6 +1,8 @@
 <?php
 require_once '../Includes/conf.php';
 
+const BANCOLUMNS = ['Config'];
+
 if (session_status() === PHP_SESSION_DISABLED) { session_start(); }
 
 $opts = [
@@ -14,8 +16,6 @@ $opts = [
 $context  = stream_context_create($opts);
 $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/columns/?table_name=".$_SESSION['statut'];
 $result = file_get_contents($url, false, $context);
-
-
 $result = json_decode($result);
 ?>
         <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;">
@@ -26,7 +26,8 @@ $result = json_decode($result);
                 <ul class="nav navbar-nav me-auto">
 <?php
 foreach ($result->columns as $res){
-    if($res->type == 'link'){
+    if($res->type == 'link' && !in_array($res->name, BANCOLUMNS)){
+//        if ()
 ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>

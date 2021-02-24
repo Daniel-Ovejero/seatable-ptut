@@ -35,7 +35,7 @@ $opts1 = [
 ];
 
 $context  = stream_context_create($opts);
-$url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=Eleve";
+$url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=".$_SESSION['statut'];
 $result = file_get_contents($url, false, $context);
 $rep = json_decode($result, true);
 
