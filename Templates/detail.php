@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <?php include_once '../Includes/import-css.php' ?>
+    <?php include '../Includes/import-css.php' ?>
 </head>
 <body>
 
@@ -36,30 +36,24 @@
             <?php
             foreach ($fields as $field) {
             ?>
-                <div class="form-group">
-                    <label for="<?= $field->name ?>Input"><?= $field->name ?></label>
+                <div class="mb-3">
+                    <label class="form-label" for="<?= $field->name ?>Input"><?= $field->name ?></label>
                     <input type="text" class="form-control" id="<?= $field->name ?>Input" name="<?= $field->name ?>" value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
                 </div>
             <?php
             }
             ?>
 
-            <div class="row text-right mt-5">
-                <div class="col align-self-end">
-
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
                     <button id="btnUpdInfo" class="btn btn-outline-info" type="button"><i class="fas fa-user-edit"></i> Modifier</button>
 
                     <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit"><i class="far fa-save"></i> Enregistrer</button>
-                </div>
             </div>
 
         </form>
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../Assets/js/app.js"></script>
+    <?php include '../Includes/import-js.php'?>
 </body>
 </html>
