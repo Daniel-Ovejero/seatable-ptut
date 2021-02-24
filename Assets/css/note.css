@@ -1,0 +1,6 @@
+.span-header {
+    width: 75px;
+    max-width: 75px;
+    display: flex;
+}
+
