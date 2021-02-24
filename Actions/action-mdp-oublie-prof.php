@@ -201,7 +201,7 @@ if(isset($_POST["recup_mail"]) && $_POST["recup_mail"]) {
                     'content' => '{
    "row": {   
      
-   "MotDePasseProfesseur": "' . password_hash($_POST['change_mdp'], PASSWORD_DEFAULT) . '"
+   "MotDePasse": "' . password_hash($_POST['change_mdp'], PASSWORD_DEFAULT) . '"
 
    },
    "table_name": "Professeur",
