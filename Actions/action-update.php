@@ -2,7 +2,14 @@
 session_start();
 require_once ('../Includes/conf.php');
 
+$row = '';
+foreach ($_POST as $key => $value) {
+    if ($key !== "row_id") {
+        $row .= '"'.$key.'": "'.$value.'"';
 
+        if ($key !== array_key_last($_POST)) { $row .= ','; }
+    }
+}
 
 $opts = array('http' =>
     array(
@@ -10,13 +17,8 @@ $opts = array('http' =>
         'header'  => "Content-Type: application/json\r\n".
             "Authorization: Token ".TOKEN."\r\n",
         'content' => '{
-   "row": {"Name": "'.$_POST['nameInput'].'",
-        "Naissance": "'.$_POST['dateNaissInput'].'",
-        "Email": "'.$_POST['mailInput'].'",
-        "Telephone": "'.$_POST['phoneInput'].'",
-        "Adresse": "'.$_POST['addressInput'].'",
-        "CodePostal": "'.$_POST['cpInput'].'",
-        "Ville": "'.$_POST['townInput'].'"
+   "row": {
+            '.$row.'
          },
    "table_name": "Eleve",
    "row_id": "'.$_POST['row_id'].'"
