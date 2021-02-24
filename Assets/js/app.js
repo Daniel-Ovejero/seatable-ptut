@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    $('[data-toggle="tooltip"]').tooltip();
+
     $('#btnUpdInfo').on('click', () => {
         let formDetail = $('#formInfo');
         let banType = ['hidden', 'button', 'submit'];
@@ -13,6 +15,22 @@ $(document).ready(() => {
         }
 
         $('#btnSaveInfo').removeClass('d-none');
+    });
+
+    $('.formAdmission').submit((event) => {
+        event.preventDefault();
+        let target = event.target;
+
+        $.ajax({
+            url: '../Actions/action-admission-update.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'rowId' : target.row_id.value,
+                'avis' : target.avis.value,
+                'commentaire' : target.commentaire.value
+            }
+        });
     });
 
 });

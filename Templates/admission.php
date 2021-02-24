@@ -21,29 +21,40 @@
             <th>Fichiers</th>
             <th>Avis</th>
             <th>Commentaire</th>
+            <th></th>
         </thead>
         <tbody>
         <?php
             foreach ($admissions as $admission) {
                 if (in_array($admission->_id, $user->Admission)) {
         ?>
-                    <tr>
-                        <td><?= isset($admission->Nom) ? $admission->Nom : '' ?></td>
-                        <td><?= isset($admission->Prenom) ? $admission->Prenom : '' ?></td>
-                        <td>
-                            <?php
-                                if (isset($admission->Fichier) && !empty($admission->Fichier)) {
-                                    foreach ($admission->Fichier as $file) {
-                            ?>
-                                        <a target="_blank" href="<?= $file->url ?>"><?= $file->name ?></a>
-                            <?php
+                    <form action="../Actions/action-admission-update.php" class="formAdmission" method="post">
+                        <input type="hidden" name="row_id" id="row_id" value="<?= $admission->_id ?>">
+                        <tr>
+                            <td><?= isset($admission->Nom) ? $admission->Nom : '' ?></td>
+                            <td><?= isset($admission->Prenom) ? $admission->Prenom : '' ?></td>
+                            <td>
+                                <?php
+                                    if (isset($admission->Fichier) && !empty($admission->Fichier)) {
+                                        foreach ($admission->Fichier as $file) {
+                                ?>
+                                            <a target="_blank" href="<?= $file->url ?>"><?= $file->name ?></a>
+                                <?php
+                                        }
                                     }
-                                }
-                            ?>
-                        </td>
-                        <td><?= isset($admission->Avis) ? $admission->Avis : '' ?></td>
-                        <td><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></td>
-                    </tr>
+                                ?>
+                            </td>
+                            <td>
+                                <input type="text" name="avis" id="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>">
+                            </td>
+                            <td>
+                                <textarea name="commentaire" id="commentaire" cols="40" rows="2"><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>
+                            </td>
+                            <td>
+                                <button id="submitAdmis" data-toggle="tooltip" title="Valider" class="btn btn-success" type="submit"><i class="fas fa-check"></i></button>
+                            </td>
+                        </tr>
+                    </form>
         <?php
                 }
             }
