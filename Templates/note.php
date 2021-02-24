@@ -14,7 +14,25 @@
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="<?= '#' . 'accordion' . $key ?>" aria-expanded="false" aria-controls="<?= 'accordion' . $key ?>">
-                        <?php echo $matiere->LibelleMatiere ?>
+                        <?php echo $matiere->LibelleMatiere?>
+                        <span class="ms-2 text-secondary"> ~
+                            <?php
+                                $moy = 0;
+                                $countNote = 0;
+                                foreach ($partiels as $partiel) {
+                                    if(in_array($partiel->_id, $matiere->Partiel)) {
+                                        foreach ($notes as $note){
+                                            if(in_array($partiel->_id, $note->Partiel)) {
+                                                $countNote += 1*$partiel->CoefficientPartiel;
+                                                $moy += $note->Note * $partiel->CoefficientPartiel;
+                                            }
+                                        }
+                                    }
+                                }
+                                echo $moy / $countNote;
+                            ?>
+                        </span>
+                        <span class="ms-4 text-secondary"> <?php echo 'Coef: ' . $matiere->CoefficientMatiere ?></span>
                     </button>
                 </h2>
                 <div id="<?= 'accordion' . $key ?>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionId">
