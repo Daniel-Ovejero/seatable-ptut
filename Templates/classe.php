@@ -12,8 +12,8 @@
 
     <div class="container">
         <h2 class="mt-5"><?php echo $idClasse ?></h2>
-
         <hr>
+
         <div class="row justify-content-center">
             <div class="col-3">
                 <ul class="list-group text-center">
