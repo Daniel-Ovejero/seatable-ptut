@@ -23,7 +23,7 @@ $result = json_decode($result);
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Seatable</a>
                 </div>
-                <ul class="nav navbar-nav mr-auto">
+                <ul class="nav navbar-nav me-auto">
 <?php
 foreach ($result->columns as $res){
     if($res->type == 'link'){
