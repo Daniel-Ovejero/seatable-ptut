@@ -4,3 +4,16 @@
     display: flex;
 }
 
+.span-header-alert {
+    width: 200px;
+    max-width: 200px;
+    display: flex;
+}
+
+.span-content {
+    width: 200px;
+    max-width: 200px;
+    display: flex;
+}
+
+
