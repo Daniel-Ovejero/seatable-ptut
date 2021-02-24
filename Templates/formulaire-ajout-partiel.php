@@ -12,7 +12,9 @@
 </head>
 <body>
 
-<?php include '../Includes/navbar.php'?>
+<?php include '../Includes/navbar.php';
+      include '../Actions/get-all-classe.php';
+?>
 
 <div class="container">
     <h2 class="mt-5">Mes informations</h2>
@@ -47,7 +49,13 @@
                 <div class="form-group">
                     <label for="firstnameInput">Classe</label>
                     <select name="classe">
-                        <option></option>
+                        <?php
+                        foreach ($classes as $classe){
+                        ?>
+                        <option><?php echo $classe->LibelleClasse ?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
