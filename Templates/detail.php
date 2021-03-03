@@ -19,7 +19,7 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <img class="w-100 img-fluid rounded-circle" style="height: 250px; object-fit: cover" src="<?= (isset($object['Photo']) || (is_file($object['Photo']))) ? '../'.$object['Photo']:'../Assets/images/image_default.png' ?>" alt="">
+                    <img class="w-100 img-fluid rounded-circle" style="height: 250px; object-fit: cover" src="<?= (empty($object['Photo']) || (!is_file($object['Photo']))) ? '../Assets/images/image_default.png':'../'.$object['Photo'] ?>" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
@@ -37,6 +37,7 @@
             <br>
 
             <?php
+            var_dump((isset($object['Photo']) || (is_file($object['Photo']))));
             foreach ($fields as $field) {
                 if($field->name == "Photo"){
                 ?>
