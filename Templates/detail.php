@@ -37,7 +37,6 @@
             <br>
 
             <?php
-            var_dump((isset($object['Photo']) || (is_file($object['Photo']))));
             foreach ($fields as $field) {
                 if($field->name == "Photo"){
                 ?>
