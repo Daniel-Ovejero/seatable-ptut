@@ -33,4 +33,19 @@ $(document).ready(() => {
         });
     });
 
+    $('.select-prof').change((event) => {
+        let form = event.target.form;
+
+        $.ajax({
+            url: '../Actions/action-admission-update-prof.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'rowId' : form.row_id.value,
+                'prof' : form.profAdmiss.value,
+                'lastProf' : form.prof_id.value
+            }
+        });
+    });
+
 });

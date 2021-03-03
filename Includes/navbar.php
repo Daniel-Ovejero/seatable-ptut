@@ -55,13 +55,17 @@ $user = json_decode($user)->rows[0];
                 </div>
                 <ul class="nav navbar-nav me-auto">
 <?php
+$adminTable = false;
 foreach ($result->columns as $res){
     if($res->type == 'link' && !in_array($res->name, BANTABLES)){
         $visible = true;
         foreach ($configTables->rows as $conf) {
             if ($res->name == $conf->Table) {
                 $visible = $conf->Visible;
-                if (in_array($user->_id, $conf->Admin)) { $visible = true; }
+                if (in_array($user->_id, $conf->Admin)) {
+                    $visible = true;
+                    $adminTable = true;
+                }
             }
         }
         if ($visible) {
