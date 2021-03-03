@@ -3,6 +3,14 @@ session_start();
 require_once ('../Includes/conf.php');
 
 $row = '';
+
+$file = $_FILES['Photo']['name'];
+$link = '/Assets/images/';
+$dir = dirname(__FILE__).$link;
+$bddDir = $link.$file;
+if (isset($file) && $file != '') {
+    $row .= '"Photo": "'.$bddDir.'",';
+} else { $lienPhoto = ''; }
 foreach ($_POST as $key => $value) {
     if ($key !== "row_id") {
         $row .= '"'.$key.'": "'.$value.'"';

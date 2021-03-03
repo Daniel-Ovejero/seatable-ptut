@@ -18,13 +18,16 @@
             <input type="hidden" id="row_id" name="row_id" value="<?= $object["_id"] ?>">
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
+                    <img class="w-100 img-fluid rounded-circle" style="height: 250px; object-fit: cover" src="<?= (isset($object['Photo']) || (is_file($object['Photo']))) ? '../'.$object['Photo']:'../Assets/images/image_default.png' ?>" alt="">
+                </div>
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="nameInput">Nom</label>
                         <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= isset($object["Nom"]) ? $object["Nom"] : "" ?>" disabled>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="firstnameInput">Prénom</label>
                         <input type="text" class="form-control" id="firstnameInput" name="firstnameInput" value="<?= isset($object["Prenom"]) ? $object["Prenom"] : "" ?>" disabled>
@@ -35,12 +38,24 @@
 
             <?php
             foreach ($fields as $field) {
-            ?>
-                <div class="mb-3">
-                    <label class="form-label" for="<?= $field->name ?>Input"><?= $field->name ?></label>
-                    <input type="text" class="form-control" id="<?= $field->name ?>Input" name="<?= $field->name ?>" value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
-                </div>
-            <?php
+                if($field->name == "Photo"){
+                ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="<?= $field->name ?>Input"><?= $field->name ?></label>
+                        <input type="file" class="form-control" id="<?= $field->name ?>Input" name="<?= $field->name ?>" disabled>
+                    </div>
+                <?php
+                }
+                else {
+                    ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="<?= $field->name ?>Input"><?= $field->name ?></label>
+                        <input type="<?= $field->type ?>" class="form-control" id="<?= $field->name ?>Input"
+                               name="<?= $field->name ?>"
+                               value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
+                    </div>
+                    <?php
+                }
             }
             ?>
 
