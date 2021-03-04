@@ -43,19 +43,19 @@
 
     <table class="table table-hover">
         <thead>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Fichiers</th>
-            <th>Avis</th>
-            <th>Commentaire</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Fichiers</th>
+            <th scope="col">Avis</th>
+            <th scope="col">Commentaire</th>
             <?php
                 if ($adminTable) {
             ?>
-                    <th>Attribution professeur</th>
+                    <th scope="col">Attribution professeur</th>
             <?php
                 }
             ?>
-            <th></th>
+            <th scope="col"></th>
         </thead>
         <tbody>
         <?php
