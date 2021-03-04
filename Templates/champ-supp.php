@@ -13,7 +13,7 @@
 
 <?php
 foreach ($tables as $table){
-    echo "<form name='table-$table->name' method='post'>";
+    echo "<form name='table-$table->name' method='post' action='../Actions/action-champ-supp.php'>";
     echo "<input type='hidden' name='table' value='$table->name'>";
     echo "<strong>".$table->name."</strong>";
     echo "<br>";
