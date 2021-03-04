@@ -24,11 +24,15 @@ $(document).ready(() => {
         $.ajax({
             url: '../Actions/action-admission-update.php',
             type: 'POST',
-            dataType: 'json',
             data: {
                 'rowId' : target.row_id.value,
                 'avis' : target.avis.value,
                 'commentaire' : target.commentaire.value
+            },
+            success: () => {
+                target.submitAdmis.hidden = true;
+                target.avis.disabled = true
+                target.commentaire.disabled = true;
             }
         });
     });
@@ -44,6 +48,22 @@ $(document).ready(() => {
                 'rowId' : form.row_id.value,
                 'prof' : form.profAdmiss.value,
                 'lastProf' : form.prof_id.value
+            }
+        });
+    });
+
+    $('#switchAdmission').change((event) => {
+        let activeAdmis = $('#switchAdmission').is(':checked');
+
+        $('.select-prof').prop('disabled', activeAdmis);
+        $('.submit-admiss').prop('hidden', !activeAdmis);
+
+        $.ajax({
+            url: '../Actions/action-admission-active.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'active' : activeAdmis
             }
         });
     });

@@ -11,12 +11,33 @@
     include '../Actions/get-admission.php';
     include '../Actions/prof.php';
     include '../Includes/navbar.php';
+    include '../Actions/config.php';
 
     $profs = getAllProf();
+    $conf = getConfigByTable('Admission');
 ?>
 
 <div class="container">
-    <h2 class="mt-5">Les Admissions</h2>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>Les Admissions</h2>
+        </div>
+        <?php
+            if ($adminTable) {
+        ?>
+                <div class="col-md-6 mt-3">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="switchAdmission" <?= $conf->Visible ? 'checked' : '' ?>>
+                            <label class="form-check-label" for="switchAdmission">Activer la phase d'admission</label>
+                        </div>
+                    </div>
+                </div>
+        <?php
+            }
+        ?>
+    </div>
+
     <hr>
 
     <table class="table table-hover">
@@ -58,16 +79,16 @@
                                 ?>
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="avis" id="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>">
+                                <input class="form-control" type="text" name="avis" id="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>>
                             </td>
                             <td>
-                                <textarea class="form-control" name="commentaire" id="commentaire" cols="40" rows="2"><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>
+                                <textarea class="form-control" name="commentaire" id="commentaire" cols="40" rows="2" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>
                             </td>
                             <?php
                                 if ($adminTable) {
                             ?>
                                     <td>
-                                        <select class="form-select select-prof" name="profAdmiss" id="profAdmiss">
+                                        <select class="form-select select-prof" name="profAdmiss" id="profAdmiss" <?= $conf->Visible ? 'disabled' : '' ?>>
                                             <option value=""></option>
                                             <?php
                                                 foreach ($profs as $prof) {
@@ -88,15 +109,7 @@
                                 }
                             ?>
                             <td>
-                                <?php
-                                    foreach ($configTables->rows as $conf) {
-                                        if ($conf->Table == 'Admission' && $conf->Visible) {
-                                ?>
-                                            <button id="submitAdmis" data-toggle="tooltip" title="Valider" class="btn btn-success" type="submit"><i class="fas fa-check"></i></button>
-                                <?php
-                                        }
-                                    }
-                                ?>
+                                <button <?= (($conf->Visible) && (!isset($admission->Traiter) || !$admission->Traiter)) ? : 'hidden' ?> name="submitAdmis" id="submitAdmis" data-toggle="tooltip" title="Valider" class="btn btn-success submit-admiss" type="submit"><i class="fas fa-check"></i></button>
                             </td>
                         </tr>
                     </form>
