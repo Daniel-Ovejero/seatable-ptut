@@ -80,7 +80,7 @@
                                 ?>
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="avis" id="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>>
+                                <input class="form-control" type="text" name="avis" id="avis" title="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>>
                             </td>
                             <td>
                                 <textarea class="form-control" name="commentaire" id="commentaire" cols="40" rows="2" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>

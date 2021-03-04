@@ -28,13 +28,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="nameInput">Nom</label>
-                        <input type="text" class="form-control" id="nameInput" name="nameInput" value="<?= isset($object["Nom"]) ? $object["Nom"] : "" ?>" disabled>
+                        <input type="text" class="form-control" id="nameInput" name="nameInput" required value="<?= isset($object["Nom"]) ? $object["Nom"] : "" ?>" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="firstnameInput">Prénom</label>
-                        <input type="text" class="form-control" id="firstnameInput" name="firstnameInput" value="<?= isset($object["Prenom"]) ? $object["Prenom"] : "" ?>" disabled>
+                        <input type="text" class="form-control" id="firstnameInput" name="firstnameInput" required value="<?= isset($object["Prenom"]) ? $object["Prenom"] : "" ?>" disabled>
                     </div>
                 </div>
             </div>
@@ -64,9 +64,9 @@
             ?>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                    <button id="btnUpdInfo" class="btn btn-outline-info" type="button"><i class="fas fa-user-edit"></i> Modifier</button>
+                    <button id="btnUpdInfo" class="btn btn-outline-info" type="button" title="Modifier mes informations personnelles"><i class="fas fa-user-edit"></i> Modifier</button>
 
-                    <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit"><i class="far fa-save"></i> Enregistrer</button>
+                    <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit" title="Enregistrer mes informations personnelles"><i class="far fa-save"></i> Enregistrer</button>
             </div>
 
         </form>

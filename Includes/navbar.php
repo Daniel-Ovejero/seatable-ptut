@@ -48,6 +48,7 @@ $configTables = json_decode($configTables);
 $user = file_get_contents($urlUser, false, $contextUser);
 $user = json_decode($user)->rows[0];
 ?>
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;" role="navigation" aria-label="Menu de navigation">
             <div class="container-fluid collapse navbar-collapse">
                 <div class="navbar-header">
@@ -71,7 +72,7 @@ foreach ($result->columns as $res){
         if ($visible) {
 ?>
             <li class="nav-item">
-                <a class="nav-link" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
+                <a class="nav-link" style="color: rgb(105,105,105) !important;" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
             </li>
 <?php
         }
@@ -89,3 +90,4 @@ foreach ($result->columns as $res){
                 </ul>
             </div>
         </nav>
+    </header>

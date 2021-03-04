@@ -22,16 +22,16 @@ session_destroy();
             <label for="username">Email</label>
         </div>
         <div>
-            <input class="form-control main-input" id="username" name="username" placeholder="username">
+            <input class="form-control main-input" id="username" name="username" title="nom d'utilisateur" required placeholder="nom d'utilisateur">
         </div>
         <div class="mt-xl-5">
             <label for="password">Password</label>
         </div>
         <div>
-            <input class="form-control main-input" id="password" name="password" placeholder="password" type="password">
+            <input class="form-control main-input" id="password" name="password" placeholder="mot de passe" title="mot de passe" required type="password">
         </div>
         <div class="mt-xl-5">
-            <button class="btn btn-primary" type="submit">Connexion</button>
+            <button class="btn btn-primary" type="submit" title="se connecter en tant que professeur">Se connecter</button>
             <a class="btn btn-secondary" style="width: 200px; height: 40px" href="mdp-oublie-prof.php">Mot de passe oublié</a>
         </div>
     </form>
