@@ -9,6 +9,7 @@
 <body>
     <?php include_once '../Actions/get-classe.php' ?>
     <?php include_once '../Includes/navbar.php' ?>
+    <main role="main" id="content">
 
     <div class="container">
         <h2 class="mt-5"><?php echo $idClasse ?></h2>
@@ -24,7 +25,7 @@
             </div>
         </div>
     </div>
-
+    </main>
 
 
 </body>

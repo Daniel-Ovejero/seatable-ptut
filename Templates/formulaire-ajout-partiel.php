@@ -15,6 +15,7 @@
 <?php include '../Includes/navbar.php';
       include '../Actions/get-all-classe.php';
 ?>
+<main role="main" id="content">
 
 <div class="container">
     <h2 class="mt-5">Mes informations</h2>
@@ -72,7 +73,7 @@
     </form>
 
 </div>
-
+</main>
 <script type="text/javascript" src="../Assets/js/app.js"></script>
 </body>
 </html>

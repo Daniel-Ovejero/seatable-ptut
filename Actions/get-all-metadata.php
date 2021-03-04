@@ -24,6 +24,7 @@ $response = curl_exec($curl);
 $response = json_decode($response);
 
 curl_close($curl);
+
 $tables = [];
 foreach ($response->metadata->tables as $table) {
     $tables [] = $table;

@@ -11,6 +11,8 @@
     <?php include_once '../Actions/get-notes-etu.php' ?>
     <?php include_once '../Includes/navbar.php' ?>
 
+    <main role="main" id="content">
+
     <div class="container">
         <h2 class="mt-5">Mes notes</h2>
         <hr>
@@ -64,6 +66,7 @@
                 <?php } ?>
             </div>
     </div>
+    </main>
     <?php include_once '../Includes/import-js.php' ?>
 </body>
 </html>

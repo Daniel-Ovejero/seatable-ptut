@@ -16,6 +16,7 @@
     $profs = getAllProf();
     $conf = getConfigByTable('Admission');
 ?>
+<main role="main" id="content">
 
 <div class="container">
     <div class="row mt-5">
@@ -121,7 +122,7 @@
     </table>
 
 </div>
-
+</main>
 <?php include '../Includes/import-js.php'?>
 </body>
 </html>

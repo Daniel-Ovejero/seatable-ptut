@@ -9,6 +9,9 @@
 <body>
 <?php include_once '../Actions/get-information-matiere.php' ?>
 <?php include_once '../Includes/navbar.php' ?>
+
+<main role="main" id="content">
+
 <div class="accordion" id="accordionId">
     <?php foreach ($matieres as $key => $matiere) { ?>
         <div class="accordion-item">
@@ -34,6 +37,7 @@
         </div>
     <?php } ?>
 </div>
+</main>
 <?php include_once '../Includes/import-js.php' ?>
 </body>
 </html>

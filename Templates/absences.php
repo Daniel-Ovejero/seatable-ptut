@@ -11,6 +11,7 @@
     <?php include_once '../Actions/get-absences-etu.php' ?>
     <?php include_once '../Includes/navbar.php' ?>
 
+    <main role="main" id="content">
     <div class="container">
         <h2 class="mt-5">Mes absences</h2>
         <hr>
@@ -60,6 +61,7 @@
             <?php } ?>
         </div>
     </div>
+    </main>
     <?php include_once '../Includes/import-js.php' ?>
 </body>
 </html>

@@ -7,6 +7,9 @@
 </head>
 
 <body>
+
+<main role="main" id="content">
+
     <div class="container text-center">
         <h4 class="title-element">Récupération de mot de passe</h4>
         <?php require_once('../Actions/action-mdp-oublie-prof.php'); if(isset($_GET["section"]) && $_GET["section"] == 'code') { ?>
@@ -52,6 +55,7 @@
             <?php }?>
         <?php } ?>
     </div>
+</main>
     <?php include '../Includes/import-js.php' ?>
 </body>
 </html>

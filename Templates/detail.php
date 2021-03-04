@@ -9,6 +9,9 @@
     <?php include '../Actions/get-information.php'?>
     <?php include '../Includes/navbar.php'?>
 
+
+    <main role="main" id="content">
+
     <div class="container">
         <h2 class="mt-5">Mes informations</h2>
         <hr>
@@ -68,7 +71,7 @@
         </form>
 
     </div>
-
+    </main>
     <?php include '../Includes/import-js.php'?>
 </body>
 </html>
