@@ -16,7 +16,7 @@
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="<?= '#' . 'accordion' . $key ?>" aria-expanded="false" aria-controls="<?= 'accordion' . $key ?>">
                     <?php echo $matiere->LibelleMatiere ?>
                 </button>
-                <a href="formulaire-ajout-partiel.php?matiere=<?php echo $matiere->LibelleMatiere ?>">+</a>
+                <a href="formulaire-ajout-partiel.php?matiere=<?php echo $matiere->LibelleMatiere ?>" title="ajouter un partiel">+</a>
 
             </h2>
             <div id="<?= 'accordion' . $key ?>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionId">
