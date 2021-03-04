@@ -42,6 +42,7 @@
     <hr>
 
     <table class="table table-hover">
+        <caption hidden>Tableau des admissions</caption>
         <thead>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
