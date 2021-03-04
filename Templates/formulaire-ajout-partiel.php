@@ -42,13 +42,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nameInput">Date du partiel</label>
-                    <input type="text" class="form-control" id="DatePartiel" name="DatePartiel">
+                    <input type="date" class="form-control" id="DatePartiel" name="DatePartiel">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="firstnameInput">Classe</label>
-                    <select name="classe">
+                    <select name="classe" class="form-select">
                         <?php
                         foreach ($classes as $classe){
                         ?>
