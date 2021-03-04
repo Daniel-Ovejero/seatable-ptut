@@ -149,7 +149,7 @@ curl_setopt_array($curl, array(
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Matiere\", \n  \"link_id\": \"".$linkClasse."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id3."\" \n}",
+    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Classe\", \n  \"link_id\": \"".$linkClasse."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id3."\" \n}",
     CURLOPT_HTTPHEADER => array(
         "Authorization: Token ".TOKEN,
         "Accept: application/json",
