@@ -20,7 +20,7 @@
                         <label for="verif_code">Code de Vérification</label>
                     </div>
                     <div>
-                        <input class="form-control main-input" id="verif_code" type="text" placeholder="Code de vérification" required name="verif_code"/><br/>
+                        <input class="form-control main-input" autocomplete="one-time-code" id="verif_code" type="text" placeholder="Code de vérification" required name="verif_code"/><br/>
                     </div>
                     <div>
                         <button class="btn btn-primary mt-2" type="submit" title="Valider mon code de vérification">Valider</button>
@@ -45,7 +45,7 @@
                 </form>
             <?php } else { ?>
                 <form class="connexionForm" method="post" action="">
-                    <input class="form-control main-input" type="email" placeholder="Votre adresse mail" title="Votre adresse mail" required name="recup_mail"/><br/>
+                    <input class="form-control main-input" autocomplete="email" type="email" placeholder="Votre adresse mail" title="Votre adresse mail" required name="recup_mail"/><br/>
                     <button class="btn btn-primary mt-2" type="submit" value="Valider" name="recup_submit" title="Valider mon adresse email">Valider</button>
                 </form>
                 <?php if(isset($error['doublon'])){?>

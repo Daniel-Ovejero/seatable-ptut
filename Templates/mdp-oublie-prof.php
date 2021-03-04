@@ -45,7 +45,7 @@
             </form>
         <?php } else { ?>
             <form class="connexionForm" method="post" action="">
-                <input class="form-control main-input" type="email" placeholder="Votre adresse mail" title="Votre adresse mail" name="recup_mail" required/><br/>
+                <input class="form-control main-input" autocomplete="email" type="email" placeholder="Votre adresse mail" title="Votre adresse mail" name="recup_mail" required/><br/>
                 <button class="btn btn-primary mt-2" type="submit" value="Valider" name="recup_submit" title="valider mon adresse mail">Valider</button>
             </form>
             <?php if(isset($error['doublon'])){?>

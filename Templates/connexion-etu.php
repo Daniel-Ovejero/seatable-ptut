@@ -22,7 +22,7 @@ session_destroy();
             <label for="username">Email</label>
         </div>
         <div>
-            <input class="form-control main-input" id="username" name="username" title="nom d'utilisateur" required placeholder="nom d'utilisateur">
+            <input class="form-control main-input" id="username" autocomplete="username" name="username" title="nom d'utilisateur" required placeholder="nom d'utilisateur">
         </div>
         <div class="mt-xl-5">
             <label for="password">Password</label>
