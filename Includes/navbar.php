@@ -48,8 +48,10 @@ $configTables = json_decode($configTables);
 $user = file_get_contents($urlUser, false, $contextUser);
 $user = json_decode($user)->rows[0];
 ?>
+
     <header role="banner">
         <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;" role="navigation" aria-label="Menu de navigation">
+            <a id="toContent" href="#content">Aller au contenu</a>
             <div class="container-fluid collapse navbar-collapse">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Seatable</a>
