@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Seatable - Ma classe</title>
-    <?php include_once '../Includes/import-css.php' ?>
+    <?php include '../Includes/import-css.php' ?>
 </head>
 
 <body>
-    <?php include_once '../Actions/get-classe.php' ?>
-    <?php include_once '../Includes/navbar.php' ?>
+    <?php include '../Actions/get-classe.php' ?>
+    <?php include '../Includes/navbar.php' ?>
+
     <main role="main" id="content">
 
     <div class="container">
@@ -27,6 +28,6 @@
     </div>
     </main>
 
-
+    <?php include '../Includes/import-js.php'?>
 </body>
 </html>

@@ -32,5 +32,6 @@ foreach ($tables as $table){
 
 ?>
 </main>
+<?php include '../Includes/import-js.php'?>
 </body>
 </html>
