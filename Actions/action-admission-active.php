@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once ('../Includes/conf.php');
+require_once ('./config.php');
+
+$conf = getConfigByTable('Admission');
 
 $opts = [
     'http' => [
@@ -9,12 +12,10 @@ $opts = [
             "Authorization: Token ".TOKEN."\r\n",
         'content' => '{
             "row": {
-                "Avis": "'.$_POST['avis'].'",
-                "Commentaire": "'.$_POST['commentaire'].'",
-                "Traiter": "true"
+                "Visible": "'.$_POST['active'].'"
             },
-            "table_name": "Admission",
-            "row_id": "'.$_POST['rowId'].'"
+            "table_name": "Config",
+            "row_id": "'.$conf->_id.'"
         }'
     ]
 ];
