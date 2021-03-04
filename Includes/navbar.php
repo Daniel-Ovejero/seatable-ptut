@@ -82,10 +82,20 @@ foreach ($result->columns as $res){
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a title="Mes Informations" class="nav-link" href="../Templates/detail.php"><i style="font-size: 24px" class="fas fa-id-card"></i></a>
+                        <a class="nav-link" href="../Templates/detail.php">
+                            <span data-toggle="tooltip" title="Mes Informations" aria-hidden="true">
+                                <i style="font-size: 24px" class="fas fa-id-card"></i>
+                            </span>
+                            <span class="hors-ecran">Mes informations</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a title="Déconnexion" class="nav-link" href="../Actions/logout.php"><i style="font-size: 24px" class="fas fa-sign-out-alt"></i></a>
+                        <a class="nav-link" href="../Actions/logout.php">
+                            <span data-toggle="tooltip" title="Déconnexion" aria-hidden="true">
+                                <i style="font-size: 24px" class="fas fa-sign-out-alt"></i>
+                            </span>
+                            <span class="hors-ecran">Déconnexion</span>
+                        </a>
                     </li>
                 </ul>
             </div>
