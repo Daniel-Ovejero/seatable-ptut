@@ -69,7 +69,7 @@ $opts = array('http' =>
         'content' => '{
    "row": {
             "LibellePartiel" :"' . $_POST["LibellePartiel"] .'", 
-            "CoefficientPrtiel" :"' . $_POST["CoefficientPartiel"] .'", 
+            "CoefficientPartiel" :"' . $_POST["CoefficientPartiel"] .'", 
             "DatePartiel" :"' . $_POST["DatePartiel"] .'",
             "Matiere" : "'.$_POST["matiere"].'" 
             
