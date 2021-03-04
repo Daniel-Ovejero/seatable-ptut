@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mes absences</title>
+    <title>Seatable - Mes absences</title>
     <link rel="stylesheet" href="../Assets/css/note.css">
     <?php include_once '../Includes/import-css.php' ?>
 </head>

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mes notes</title>
+    <title>Seatable - Mes notes</title>
     <link rel="stylesheet" href="../Assets/css/note.css">
     <?php include_once '../Includes/import-css.php' ?>
 </head>

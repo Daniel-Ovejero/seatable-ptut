@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Seatable - Mot de passe oublié</title>
     <?php include '../Includes/import-css.php' ?>
 </head>
 

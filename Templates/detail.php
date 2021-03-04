@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <title>Seatable - Mes informations</title>
     <?php include '../Includes/import-css.php' ?>
 </head>
 <body>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Notes professeurs</title>
+    <title>Seatable - Notes professeurs</title>
     <?php include_once '../Includes/import-css.php' ?>
 </head>
 
