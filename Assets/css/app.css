@@ -1,0 +1,14 @@
+.hors-ecran {
+    position: absolute;
+    left: -99999rem;
+}
+
+#toContent {
+    position: absolute;
+    left: -99999px;
+}
+
+#toContent:focus {
+    position: relative;
+    left: 0;
+}

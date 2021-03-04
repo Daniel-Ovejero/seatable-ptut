@@ -48,8 +48,10 @@ $configTables = json_decode($configTables);
 $user = file_get_contents($urlUser, false, $contextUser);
 $user = json_decode($user)->rows[0];
 ?>
+
     <header role="banner">
         <nav class="navbar navbar-expand-lg navbar-light navbar-inverse" style="background-color: #e3f2fd;" role="navigation" aria-label="Menu de navigation">
+            <a id="toContent" href="#content">Aller au contenu</a>
             <div class="container-fluid collapse navbar-collapse">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Seatable</a>
@@ -82,10 +84,20 @@ foreach ($result->columns as $res){
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a title="Mes Informations" class="nav-link" href="../Templates/detail.php"><i style="font-size: 24px" class="fas fa-id-card"></i></a>
+                        <a class="nav-link" href="../Templates/detail.php">
+                            <span data-toggle="tooltip" title="Mes Informations" aria-hidden="true">
+                                <i style="font-size: 24px" class="fas fa-id-card"></i>
+                            </span>
+                            <span class="hors-ecran">Mes informations</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a title="Déconnexion" class="nav-link" href="../Actions/logout.php"><i style="font-size: 24px" class="fas fa-sign-out-alt"></i></a>
+                        <a class="nav-link" href="../Actions/logout.php">
+                            <span data-toggle="tooltip" title="Déconnexion" aria-hidden="true">
+                                <i style="font-size: 24px" class="fas fa-sign-out-alt"></i>
+                            </span>
+                            <span class="hors-ecran">Déconnexion</span>
+                        </a>
                     </li>
                 </ul>
             </div>

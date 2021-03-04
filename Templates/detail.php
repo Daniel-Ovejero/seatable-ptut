@@ -64,9 +64,13 @@
             ?>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                    <button id="btnUpdInfo" class="btn btn-outline-info" type="button" title="Modifier mes informations personnelles"><i class="fas fa-user-edit"></i> Modifier</button>
+                    <button id="btnUpdInfo" class="btn btn-outline-info" type="button" title="Modifier mes informations personnelles">
+                        <span aria-hidden="true"><i class="fas fa-user-edit"></i></span> Modifier
+                    </button>
 
-                    <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit" title="Enregistrer mes informations personnelles"><i class="far fa-save"></i> Enregistrer</button>
+                    <button id="btnSaveInfo" class="btn btn-outline-success ml-1 d-none" type="submit" title="Enregistrer mes informations personnelles">
+                        <span aria-hidden="true"><i class="far fa-save"></i></span> Enregistrer
+                    </button>
             </div>
 
         </form>

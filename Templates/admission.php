@@ -42,6 +42,7 @@
     <hr>
 
     <table class="table table-hover">
+        <caption hidden>Tableau des admissions</caption>
         <thead>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
@@ -80,16 +81,16 @@
                                 ?>
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="avis" id="avis" title="avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>>
+                                <input class="form-control" type="text" name="avis" id="avis" title="Avis" value="<?= isset($admission->Avis) ? $admission->Avis : '' ?>" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>>
                             </td>
                             <td>
-                                <textarea class="form-control" name="commentaire" id="commentaire" cols="40" rows="2" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>
+                                <textarea title="Commentaire" class="form-control" name="commentaire" id="commentaire" cols="40" rows="2" <?= (isset($admission->Traiter) && $admission->Traiter) ? 'disabled' : '' ?>><?= isset($admission->Commentaire) ? $admission->Commentaire : '' ?></textarea>
                             </td>
                             <?php
                                 if ($adminTable) {
                             ?>
                                     <td>
-                                        <select class="form-select select-prof" name="profAdmiss" id="profAdmiss" <?= $conf->Visible ? 'disabled' : '' ?>>
+                                        <select title="Attribution professeur" class="form-select select-prof" name="profAdmiss" id="profAdmiss" <?= $conf->Visible ? 'disabled' : '' ?>>
                                             <option value=""></option>
                                             <?php
                                                 foreach ($profs as $prof) {
@@ -110,7 +111,12 @@
                                 }
                             ?>
                             <td>
-                                <button <?= (($conf->Visible) && (!isset($admission->Traiter) || !$admission->Traiter)) ? : 'hidden' ?> name="submitAdmis" id="submitAdmis" data-toggle="tooltip" title="Valider" class="btn btn-success submit-admiss" type="submit"><i class="fas fa-check"></i></button>
+                                <button data-toggle="tooltip" title="Valider" <?= (($conf->Visible) && (!isset($admission->Traiter) || !$admission->Traiter)) ? : 'hidden' ?> name="submitAdmis" id="submitAdmis" class="btn btn-success submit-admiss" type="submit">
+                                    <span aria-hidden="true">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="hors-ecran">Valider</span>
+                                </button>
                             </td>
                         </tr>
                     </form>
