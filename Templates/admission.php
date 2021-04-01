@@ -111,7 +111,7 @@
                                 }
                             ?>
                             <td>
-                                <button data-toggle="tooltip" title="Valider" <?= (($conf->Visible) && (!isset($admission->Traiter) || !$admission->Traiter)) ? : 'hidden' ?> name="submitAdmis" id="submitAdmis" class="btn btn-success submit-admiss" type="submit">
+                                <button data-toggle="tooltip" title="Valider" <?= (($conf->Visible) && (!isset($admission->Traiter) || !$admission->Traiter)) ? : 'hidden' ?> name="submitAdmis" id="<?= $admission->Id ?>" class="btn btn-success submit-admiss" type="submit">
                                     <span aria-hidden="true">
                                         <i class="fas fa-check"></i>
                                     </span>
