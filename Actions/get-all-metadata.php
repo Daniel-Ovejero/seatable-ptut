@@ -3,6 +3,7 @@
 include_once "../Includes/conf.php";
 session_start();
 
+/*
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -25,17 +26,23 @@ $response = json_decode($response);
 
 curl_close($curl);
 
+*/
+
+$optsClass = [
+    'http' => [
+        'method'  => 'GET',
+        'header'  => "Content-Type: application/json\r\n".
+            "Authorization: Token ".TOKEN."\r\n",
+    ]
+];
+
+$context  = stream_context_create($optsClass);
+$url = "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/metadata/";
+$response = file_get_contents($url, false, $context);
+$response = json_decode($response);
+
 $tables = [];
 foreach ($response->metadata->tables as $table) {
     $tables [] = $table;
 
-    /*
-    echo "<strong>".$table->name."</strong>";
-    echo "<br>";
-    foreach ($table->columns as $col) {
-        echo $col->name;
-        echo "<br>";
-        var_dump($col);
-    }
-    */
 }
