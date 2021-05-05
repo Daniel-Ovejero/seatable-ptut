@@ -17,6 +17,21 @@ $(document).ready(() => {
         $('#btnSaveInfo').removeClass('d-none');
     });
 
+    $('#btnUpdCompany').on('click', () => {
+        let formDetail = $('#formCompany');
+        let banType = ['hidden', 'button', 'submit'];
+        let banId = ['nameInput', 'firstnameInput'];
+
+        for (let i = 0; i < formDetail[0].length; i++) {
+            let item = formDetail[0].elements[i];
+            if (!banType.includes(item.type) && !banId.includes(item.id)) {
+                $('#' + item.id).prop('disabled', false);
+            }
+        }
+
+        $('#btnSaveCompany').removeClass('d-none');
+    });
+
     $('.formAdmission').submit((event) => {
         event.preventDefault();
         let target = event.target;
