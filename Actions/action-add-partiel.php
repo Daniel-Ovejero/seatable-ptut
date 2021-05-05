@@ -115,51 +115,75 @@ $object = $rep->rows[0];
 
 $id1 = $object->_id;
 
-$curl = curl_init();
+//$curl = curl_init();
+//
+//curl_setopt_array($curl, array(
+//    CURLOPT_URL => "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/",
+//    CURLOPT_RETURNTRANSFER => true,
+//    CURLOPT_ENCODING => "",
+//    CURLOPT_MAXREDIRS => 10,
+//    CURLOPT_TIMEOUT => 0,
+//    CURLOPT_FOLLOWLOCATION => true,
+//    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//    CURLOPT_CUSTOMREQUEST => "POST",
+//    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Matiere\", \n  \"link_id\": \"".$linkMatiere."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id2."\" \n}",
+//    CURLOPT_HTTPHEADER => array(
+//        "Authorization: Token ".TOKEN,
+//        "Accept: application/json",
+//        "Content-type: application/json"
+//    ),
+//));
+//
+//$response = curl_exec($curl);
 
-curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Matiere\", \n  \"link_id\": \"".$linkMatiere."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id2."\" \n}",
-    CURLOPT_HTTPHEADER => array(
-        "Authorization: Token ".TOKEN,
-        "Accept: application/json",
-        "Content-type: application/json"
-    ),
-));
+//curl_close($curl);
+//
+//$curl = curl_init();
+//
+//curl_setopt_array($curl, array(
+//    CURLOPT_URL => "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/",
+//    CURLOPT_RETURNTRANSFER => true,
+//    CURLOPT_ENCODING => "",
+//    CURLOPT_MAXREDIRS => 10,
+//    CURLOPT_TIMEOUT => 0,
+//    CURLOPT_FOLLOWLOCATION => true,
+//    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//    CURLOPT_CUSTOMREQUEST => "POST",
+//    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Classe\", \n  \"link_id\": \"".$linkClasse."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id3."\" \n}",
+//    CURLOPT_HTTPHEADER => array(
+//        "Authorization: Token ".TOKEN,
+//        "Accept: application/json",
+//        "Content-type: application/json"
+//    ),
+//));
+//
+//$response = curl_exec($curl);
+//
+//curl_close($curl);
 
-$response = curl_exec($curl);
+$opts = array('http' =>
+    array(
+        'method'  => 'POST',
+        'header'  => "Content-Type: application/json\r\n".
+            "Authorization: Token ".TOKEN."\r\n",
+        'content' => "{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Matiere\", \n  \"link_id\": \"".$linkMatiere."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id2."\" \n}"
+    )
+);
+$context  = stream_context_create($opts);
+$url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/";
+$result = file_get_contents($url, false, $context);
 
-curl_close($curl);
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS =>"{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Classe\", \n  \"link_id\": \"".$linkClasse."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id3."\" \n}",
-    CURLOPT_HTTPHEADER => array(
-        "Authorization: Token ".TOKEN,
-        "Accept: application/json",
-        "Content-type: application/json"
-    ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
+$opts = array('http' =>
+    array(
+        'method'  => 'POST',
+        'header'  => "Content-Type: application/json\r\n".
+            "Authorization: Token ".TOKEN."\r\n",
+        'content' => "{ \n  \"table_name\": \"Partiel\", \n  \"other_table_name\": \"Classe\", \n  \"link_id\": \"".$linkClasse."\", \n  \"table_row_id\": \"".$id1."\", \n  \"other_table_row_id\": \"".$id3."\" \n}"
+    )
+);
+$context  = stream_context_create($opts);
+$url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/". UUID."/links/";
+$result = file_get_contents($url, false, $context);
 
 //curl -H 'Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjFAMS5jb20iLCJkdGFibGVfdXVpZCI6IjYyMmYxZTZkMzM3NDQ5ZTQ5YjQyOWYyMjUzMDM3YTc2In0.3ytwzZsfZwzifAQtsLzn0AFMnEDSeHxkKlIgD6XKuIs' -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"table_name": "Table1","other_table_name": "Table2","link_id": '1206'"table_row_id": "OkuYk0OWSIyi7zZKJ2NC4g","other_table_row_id": "eyuMiAwaQlSSr983O03oUA"}' https://cloud.seatable.io/dtable-server/api/v1/dtables/7f7dc9c7187a4d9fb6cfff5e5019a6d5/links/
 //var_dump($result);
