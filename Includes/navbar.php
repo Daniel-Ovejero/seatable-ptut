@@ -56,7 +56,11 @@ $user = json_decode($user)->rows[0];
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Seatable</a>
                 </div>
-                <ul class="nav navbar-nav me-auto">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav me-auto">
 <?php
 $adminTable = false;
 foreach ($result->columns as $res){
@@ -73,33 +77,34 @@ foreach ($result->columns as $res){
         }
         if ($visible) {
 ?>
-            <li class="nav-item">
-                <a class="nav-link" style="color: rgb(105,105,105) !important;" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
-            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: rgb(105,105,105) !important;" href="../Templates/<?= strtolower($res->name) ?>.php"><?= $res->name ?></a>
+                        </li>
 <?php
         }
     }
 }
 ?>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Templates/detail.php">
-                            <span data-toggle="tooltip" title="Mes Informations" aria-hidden="true">
-                                <i style="font-size: 24px" class="fas fa-id-card"></i>
-                            </span>
-                            <span class="hors-ecran">Mes informations</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Actions/logout.php">
-                            <span data-toggle="tooltip" title="Déconnexion" aria-hidden="true">
-                                <i style="font-size: 24px" class="fas fa-sign-out-alt"></i>
-                            </span>
-                            <span class="hors-ecran">Déconnexion</span>
-                        </a>
-                    </li>
-                </ul>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Templates/detail.php">
+                                <span data-toggle="tooltip" title="Mes Informations" aria-hidden="true">
+                                    <i style="font-size: 24px" class="fas fa-id-card"></i>
+                                </span>
+                                <span class="hors-ecran">Mes informations</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Actions/logout.php">
+                                <span data-toggle="tooltip" title="Déconnexion" aria-hidden="true">
+                                    <i style="font-size: 24px" class="fas fa-sign-out-alt"></i>
+                                </span>
+                                <span class="hors-ecran">Déconnexion</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

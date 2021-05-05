@@ -74,6 +74,6 @@
         </div>
     </main>
 
-    <script type="text/javascript" src="../Assets/js/app.js"></script>
+    <?php include '../Includes/import-js.php'?>
 </body>
 </html>

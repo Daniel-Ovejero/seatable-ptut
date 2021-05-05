@@ -5,6 +5,8 @@ session_start();
 include("../Includes/conf.php");
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $table = 'Eleve';
+    if (isset($_POST['ancien']) && $_POST['ancien'] == 'true') { $table = 'Anciens'; }
 
     $opts = array('http' =>
         array(
@@ -21,7 +23,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
 			"filter_term": "'.$_POST["username"].'",
 
-			"filter_term_modifier": ""	
+			"filter_term_modifier": ""
 		}
 		],
 		"filter_conjunction": "And"
@@ -30,7 +32,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     );
 
     $context  = stream_context_create($opts);
-    $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=Eleve";
+    $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=".$table;
     $result = file_get_contents($url, false, $context);
     $rep = json_decode($result, true);
 
@@ -40,7 +42,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             if ($_POST["username"] == $etudiant["AdresseMail"]) {
                 if (password_verify($_POST["password"],$etudiant["MotDePasse"])) {
                     $_SESSION["row_id"] = $etudiant["Id"];
-                    $_SESSION["statut"] = "Eleve";
+                    $_SESSION["statut"] = $table;
                     break;
                 }
             }

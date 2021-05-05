@@ -56,14 +56,22 @@ $(document).ready(() => {
         let activeAdmis = $('#switchAdmission').is(':checked');
 
         $('.select-prof').prop('disabled', activeAdmis);
-        $('.submit-admiss').prop('hidden', !activeAdmis);
 
         $.ajax({
             url: '../Actions/action-admission-active.php',
             type: 'POST',
-            dataType: 'json',
             data: {
                 'active' : activeAdmis
+            },
+            success: (data) => {
+                if (data) {
+                    let traites = JSON.parse(data);
+                    $('.submit-admiss').each((key, value) => {
+                        if (!traites.includes(value.id)) {
+                            $('#'+value.id).prop('hidden', !activeAdmis);
+                        }
+                    });
+                }
             }
         });
     });
