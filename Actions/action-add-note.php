@@ -2,6 +2,7 @@
 session_start();
 require_once ('../Includes/conf.php');
 
+$partielReturn = null;
 
 $partielId = $_POST['partielId'];
 if (($key = array_search($partielId, $_POST)) !== false) {
@@ -25,6 +26,8 @@ foreach ($_POST as $key => $item){
     $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/rows/".$partielId."/?table_id=aJ7v&convert=true";
     $result = file_get_contents($url, false, $context);
     $partiel = json_decode($result);
+
+    $partielReturn = $partiel;
 
     $opts = [
         'http' => [
@@ -135,5 +138,5 @@ foreach ($_POST as $key => $item){
     }
 }
 
-
+header("Location: ../Templates/note-edit.php?id=".$partielReturn->Id);
 
