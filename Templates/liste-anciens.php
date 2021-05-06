@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Seatable - Partiels</title>
+    <title>Seatable - Anciens etudiants</title>
     <?php include_once '../Includes/import-css.php' ?>
 </head>
 
