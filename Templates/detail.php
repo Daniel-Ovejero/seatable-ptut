@@ -23,7 +23,7 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <img class="w-100 img-fluid rounded-circle" style="height: 250px; object-fit: cover" src="<?= (empty($object['Photo']) || (!is_file($object['Photo']))) ? '../Assets/images/image_default.png':'../'.$object['Photo'] ?>" alt="photo de profil">
+                    <img class="w-100 img-fluid rounded-circle" style="height: 250px; object-fit: cover" src="<?= (empty($object['Photo'])) ? '../Assets/images/image_default.png':'..'.$object['Photo'] ?>" alt="photo de profil">
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
