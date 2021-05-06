@@ -32,7 +32,7 @@
                                 <?php foreach ($partiels as $partiel) {
                                     if(in_array($partiel->_id, $matiere->Partiel)) { ?>
                                         <li class="list-group-item">
-                                            <?php echo $partiel->LibellePartiel . ' | coefficient : ' . $partiel->CoefficientPartiel . ' | Date du partiel :'. $partiel->DatePartiel  ?>
+                                            <a href="note-edit.php<?= "?id=".$partiel->Id?>"><?php echo $partiel->LibellePartiel . ' | coefficient : ' . $partiel->CoefficientPartiel . ' | Date du partiel :'. $partiel->DatePartiel  ?></a>
                                         </li>
                                     <?php } } ?>
                             </ul>
