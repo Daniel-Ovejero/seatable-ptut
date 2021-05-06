@@ -11,12 +11,18 @@ $bddDir = $link.$file;
 if (isset($file) && $file != '') {
     $row .= '"Photo": "'.$bddDir.'",';
 } else { $lienPhoto = ''; }
+
 foreach ($_POST as $key => $value) {
-    if ($key !== "row_id") {
+    if ($key !== "row_id" && $key !== "RechercheEmploi") {
         $row .= '"'.$key.'": "'.$value.'"';
 
         if ($key !== array_key_last($_POST)) { $row .= ','; }
     }
+}
+
+if ($_SESSION['statut'] == 'Anciens') {
+    if (isset($_POST['RechercheEmploi'])) { $row .= '"RechercheEmploi": "true"'; }
+    else { $row .= ',"RechercheEmploi": "false"'; }
 }
 
 $opts = array('http' =>

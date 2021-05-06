@@ -84,7 +84,13 @@ foreach ($result->columns as $res){
         }
     }
 }
+
+if ($_SESSION['statut'] == 'Professeur') {
 ?>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: rgb(105,105,105) !important;" href="../Templates/liste-anciens.php">Anciens étudiants</a>
+                        </li>
+<?php } ?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">

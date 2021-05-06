@@ -54,9 +54,11 @@
                     ?>
                     <div class="mb-3">
                         <label class="form-label" for="<?= $field->name ?>Input"><?= $field->name ?></label>
-                        <input type="<?= $field->type ?>" class="form-control" id="<?= $field->name ?>Input"
+                        <input type="<?= $field->type ?>" class="<?= $field->type == 'checkbox' ? 'form-check-input' : 'form-control' ?>" id="<?= $field->name ?>Input"
                                name="<?= $field->name ?>"
-                               value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>" disabled>
+                               value="<?= isset($object[$field->name]) ? $object[$field->name] : "" ?>"
+                               <?= ($field->type == 'checkbox' && (isset($object[$field->name]) && $object[$field->name] == '1')) ? 'checked' : '' ?>
+                               disabled>
                     </div>
                     <?php
                 }

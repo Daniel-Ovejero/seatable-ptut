@@ -36,6 +36,8 @@ $result = file_get_contents($url, false, $context);
 $rep = json_decode($result, true);
 $rep = $rep["rows"];
 foreach ($rep as $key=>$row){
+
+    /*
     $curl = curl_init();
 
 
@@ -59,6 +61,20 @@ foreach ($rep as $key=>$row){
     $response = curl_exec($curl);
 
     curl_close($curl);
+    */
+    $opts = array('http' =>
+        array(
+            'method'  => 'DELETE',
+            'header'  => "Content-Type: application/json\r\n".
+                "Authorization: Token ".TOKEN."\r\n",
+            'content' => "
+{\n\t\"table_name\": \"ListeChamps\", \n    \"row_id\": \"".$row["_id"]."\"\n}
+"
+        )
+    );
+    $context  = stream_context_create($opts);
+    $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/rows/";
+    $result = file_get_contents($url, false, $context);
 }
 
 /*
@@ -68,6 +84,7 @@ foreach ($rep as $key=>$row){
 foreach ($_POST as $key=>$value) {
 
     if($key != "table") {
+        /*
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -90,5 +107,18 @@ foreach ($_POST as $key=>$value) {
         $response = curl_exec($curl);
 
         curl_close($curl);
+        */
+        $opts = array('http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => "Content-Type: application/json\r\n".
+                    "Authorization: Token ".TOKEN."\r\n",
+                'content' => "
+{ \n\t\"row\": {\n        \"Table\": \"".$_POST["table"]."\",\n        \"Colonne\": \"".$value."\"\n   }, \n\t\"table_name\": \"ListeChamps\" \n}"
+            )
+        );
+        $context  = stream_context_create($opts);
+        $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/rows/";
+        $result = file_get_contents($url, false, $context);
     }
 }
