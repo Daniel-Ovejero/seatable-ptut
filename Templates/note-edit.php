@@ -21,8 +21,8 @@
             <?php foreach ($notes as $key=>$note){ ?>
                 <div class="row mb-3">
                     <h3 class="col-8" style="font-size: 20px"><?= $note["eleve"] ?></h3>
-                    <input id="<?= $key ?>" class="col-4" value="<?= $note["note"] ?>" name="<?= $note["eleveId"] ?>">
-                    <input class="d-none" value="<?= $note["eleveRowId"] ?>" name="<?= $note["eleveRowId"] ?>">
+                    <input id="<?= $key ?>" class="col-4" value="<?= $note["note"] ?>" name="<?= $note['eleveRowId'] ?>">
+<!--                    <input class="d-none" value="--><?//= $note["eleveRowId"] ?><!--" name="--><?//= $note["eleveRowId"] ?><!--">-->
                 </div>
             <?php } ?>
             <button type="submit" class="btn btn-primary ">Valider</button>
