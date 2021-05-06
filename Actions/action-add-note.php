@@ -8,9 +8,24 @@ if (($key = array_search($partielId, $_POST)) !== false) {
     unset($_POST[$key]);
 }
 
-var_dump($_POST);
-
 foreach ($_POST as $key => $item){
+    $opts = [
+        'http' => [
+            'method' => 'GET',
+            'header'  => "Content-Type: application/json\r\n".
+                "Authorization: Token ".TOKEN."\r\n",
+        ]
+    ];
+
+    $context  = stream_context_create($opts);
+    $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/rows/".$key."/?table_id=0000&convert=true";
+    $result = file_get_contents($url, false, $context);
+    $eleve = json_decode($result);
+
+    $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/rows/".$partielId."/?table_id=aJ7v&convert=true";
+    $result = file_get_contents($url, false, $context);
+    $partiel = json_decode($result);
+
     $opts = [
         'http' => [
             'method' => 'GET',
@@ -21,13 +36,13 @@ foreach ($_POST as $key => $item){
 		        {
                     "column_name": "Partiel",
                     "filter_predicate": "contains",
-                    "filter_term": "'.$partielId.'",
+                    "filter_term": "'.$partiel->Id.'",
                     "filter_term_modifier": ""	
 		        },
 		        {
 		            "column_name": "Eleve",
                     "filter_predicate": "contains",
-                    "filter_term": "'.$key.'",
+                    "filter_term": "'.$eleve->Id.'",
                     "filter_term_modifier": ""	
 		        }
 		    ],
@@ -40,7 +55,6 @@ foreach ($_POST as $key => $item){
     $url =  "https://cloud.seatable.io/dtable-server/api/v1/dtables/".UUID."/filtered-rows/?table_name=Note";
     $result = file_get_contents($url, false, $context);
     $rep = json_decode($result);
-
 
     if(!empty($rep->rows[0])){
         $opts = array('http' =>
